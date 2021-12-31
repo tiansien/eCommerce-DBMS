@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package net.javaguides.swing;
 
 import java.awt.Color;
@@ -67,11 +71,11 @@ public class ChangePassword extends JFrame {
                     System.out.println("update password name " + name);
                     System.out.println("update password");
 
-                    Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/swing_demo?useTimezone=true&serverTimezone=UTC",
-                        "root", "123456");
+                    Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/swing_demo",
+                        "root", "root");
 
                     PreparedStatement st = (PreparedStatement) con
-                        .prepareStatement("Update account set password=? where user_name=?");
+                        .prepareStatement("Update student set password=? where name=?");
 
                     st.setString(1, pstr);
                     st.setString(2, name);
@@ -95,3 +99,4 @@ public class ChangePassword extends JFrame {
         contentPane.add(lblEnterNewPassword);
     }
 }
+
